@@ -71,7 +71,7 @@ export default {
 }
 </script>
 
-<style>
+<style>w
 /* Helper classes */
 .basil {
   background-color: #FFFBE6 !important;
