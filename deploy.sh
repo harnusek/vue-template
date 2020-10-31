@@ -19,5 +19,7 @@ git commit -m 'deploy'
 # if you are deploying to https://harnusek.github.io
 # git push -f git@github.com:harnusek/harnusek.github.io.git master
 
- if you are deploying to https://harnusek.github.io/vue-template
+# if you are deploying to https://harnusek.github.io/vue-template
  git push -f git@github.com:harnusek/vue-template.git master:gh-pages
+
+cd -
