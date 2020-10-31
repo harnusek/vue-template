@@ -15,13 +15,13 @@
       >
         <v-tab
             v-for="item in items"
-            :key="item"
+            :key="item.tab"
         >
           {{ item.tab }}
         </v-tab>
         <v-tab-item
             v-for="item in items"
-            :key="item"
+            :key="item.tab"
         >
           <h2>{{ item.text }}</h2>
         </v-tab-item>
@@ -31,6 +31,7 @@
     <Counter v-if="tab==0"></Counter>
     <Table v-if="tab==1"></Table>
     <Photos v-if="tab==2"></Photos>
+    <Bark v-if="tab==3"></Bark>
 
   </div>
 </template>
@@ -39,6 +40,7 @@
 import Counter from './Counter';
 import Table from './Albums';
 import Photos from "./Photos";
+import Bark from "./Bark";
 
 export default {
   name: "Header",
@@ -46,16 +48,18 @@ export default {
   components: {
     Counter,
     Table,
-    Photos
+    Photos,
+    Bark,
   },
 
   data: () => ({
     mouse: false,
-    tab: null,
+    tab: 3,
     items: [
       {tab:'Counter', text:'Reactive counter'},
       {tab:'Albums', text:'Super table conected with API'},
       {tab:'Photos', text:'Boring banner'},
+      {tab:'Bark', text:'Dog is such reactive'},
     ],
     text: 'Just testing',
   }),
