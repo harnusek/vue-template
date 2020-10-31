@@ -16,10 +16,8 @@ git init
 git add -A
 git commit -m 'deploy'
 
-# if you are deploying to https://<USERNAME>.github.io
-# git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
+# if you are deploying to https://harnusek.github.io
+# git push -f git@github.com:harnusek/harnusek.github.io.git master
 
-# if you are deploying to https://<USERNAME>.github.io/<REPO>
-# git push -f git@github.com:<USERNAME>/<REPO>.git master:gh-pages
-
-cd -
+ if you are deploying to https://harnusek.github.io/vue-template
+ git push -f git@github.com:harnusek/vue-template.git master:gh-pages
