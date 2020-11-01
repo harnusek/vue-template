@@ -32,6 +32,7 @@
     <Table v-if="tab==1"></Table>
     <Photos v-if="tab==2"></Photos>
     <Bark v-if="tab==3"></Bark>
+    <Weather v-if="tab==4"></Weather>
 
   </div>
 </template>
@@ -41,6 +42,7 @@ import Counter from './Counter';
 import Table from './Albums';
 import Photos from "./Photos";
 import Bark from "./Bark";
+import Weather from "./Weather";
 
 export default {
   name: "Header",
@@ -50,16 +52,18 @@ export default {
     Table,
     Photos,
     Bark,
+    Weather,
   },
 
   data: () => ({
     mouse: false,
-    tab: 3,
+    tab: 1,
     items: [
       {tab:'Counter', text:'Reactive counter'},
       {tab:'Albums', text:'Super table conected with API'},
       {tab:'Photos', text:'Boring banner'},
       {tab:'Bark', text:'Dog is such reactive'},
+      {tab:'Weather', text:'Connected to openweathermap.org API'},
     ],
     text: 'Just testing',
   }),
