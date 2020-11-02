@@ -15,15 +15,15 @@
         <v-spacer></v-spacer>
 
         <v-btn
-            v-for="icon in icons"
-            :key="icon"
+            v-for="site in sites"
+            :key="site.icon"
             class="mx-4"
             dark
             icon
-            href="/fooRoute"
+            :href="site.url"
         >
           <v-icon size="24px">
-            {{ icon }}
+            {{ site.icon }}
           </v-icon>
         </v-btn>
       </v-card-title>
@@ -41,11 +41,11 @@
 export default {
   data: () => ({
     goodby: "See ya in better times!",
-    icons: [
-      'mdi-facebook',
-      'mdi-twitter',
-      'mdi-linkedin',
-      'mdi-instagram',
+    sites: [
+      { icon: 'mdi-facebook', url: 'https://www.pinkfloyd.com/design/album_covers.php'},
+      { icon: 'mdi-twitter', url: 'https://www.pinkfloyd.com/design/album_covers.php'},
+      { icon: 'mdi-linkedin', url: 'https://www.pinkfloyd.com/design/album_covers.php'},
+      { icon: 'mdi-instagram', url: 'https://www.pinkfloyd.com/design/album_covers.php'},
     ],
   }),
 }

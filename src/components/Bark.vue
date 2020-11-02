@@ -8,8 +8,7 @@
   >
     <v-img
         v-on:click="bark()"
-        lazy-src="../assets/dog.png"
-        src=""
+        src="../assets/dog.png"
     ></v-img>
   </v-card>>
 
@@ -21,8 +20,7 @@
   >
     <v-img
         v-on:click="bark2()"
-        lazy-src="../assets/dog2.png"
-        src=""
+        src="../assets/dog2.png"
     ></v-img>
   </v-card>>
 </div>
