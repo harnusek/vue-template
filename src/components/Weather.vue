@@ -9,7 +9,10 @@
           {{ weather.name }}, {{ weather.sys.country }}
         </v-list-item-title>
         <v-list-item-subtitle>
-          {{ time }} {{ date }}, {{ weather.weather[0].description }}
+          <b>{{ timedate }}</b>
+        </v-list-item-subtitle>
+        <v-list-item-subtitle>
+          {{ weather.weather[0].description }}
         </v-list-item-subtitle>
         <br>
         <v-list-item-subtitle>
@@ -63,11 +66,12 @@
 
 
 <script>
+import moment from 'moment';
 
 export default {
   data: () => ({
-    time: new Date().toLocaleTimeString(),
-    date: new Date().toLocaleDateString(),
+    timedate: moment().format('hh:mm:ss, dddd DD.MM. YYYY'),
+
     position: {
       lat: 0,
       lon: 0
@@ -83,11 +87,8 @@ export default {
   },
   created() {
     setInterval(() => {
-      this.time = new Date().toLocaleTimeString()
+      this.timedate = moment().format('hh:mm:ss, dddd DD.MM. YYYY')
     }, 1000);
-    setInterval(() => {
-      this.date = new Date().toLocaleDateString()
-    }, 10000);
 
     navigator.geolocation.getCurrentPosition((position => {
       this.position = {

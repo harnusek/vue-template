@@ -1,5 +1,9 @@
 <template>
   <div>
+    <router-link to="/admin" style="color: grey; text-decoration: none;">
+      <v-icon to="/admin">mdi-account-circle</v-icon>
+      Log in
+    </router-link>
     <v-card color="white">
       <v-card-title v-on:click="clickH2()" class="text-center justify-center py-6">
         <h1 class="font-weight-bold display-3 basil--text">
@@ -16,6 +20,7 @@
         <v-tab
             v-for="item in items"
             :key="item.tab"
+            :to="item.path"
         >
           {{ item.tab }}
         </v-tab>
@@ -28,42 +33,24 @@
       </v-tabs>
     </v-card>
 
-    <Counter v-if="tab==0"></Counter>
-    <Table v-if="tab==1"></Table>
-    <Photos v-if="tab==2"></Photos>
-    <Bark v-if="tab==3"></Bark>
-    <Weather v-if="tab==4"></Weather>
-
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import Counter from './Counter';
-import Table from './Albums';
-import Photos from "./Photos";
-import Bark from "./Bark";
-import Weather from "./Weather";
 
 export default {
   name: "Header",
-
-  components: {
-    Counter,
-    Table,
-    Photos,
-    Bark,
-    Weather,
-  },
 
   data: () => ({
     mouse: false,
     tab: 1,
     items: [
-      {tab:'Counter', text:'Reactive counter'},
-      {tab:'Albums', text:'Super table conected with API'},
-      {tab:'Photos', text:'Boring banner'},
-      {tab:'Bark', text:'Dog is such reactive'},
-      {tab:'Weather', text:'Connected to openweathermap.org API'},
+      {tab:'Counter', text:'Reactive counter', path: '/counter'},
+      {tab:'Albums', text:'Super table conected with API', path: '/albums'},
+      {tab:'Photos', text:'Boring banner', path: '/photos'},
+      {tab:'Bark', text:'Dog is such reactive', path: '/bark'},
+      {tab:'Weather', text:'Connected to openweathermap.org API', path: '/weather'},
     ],
     text: 'Just testing',
   }),

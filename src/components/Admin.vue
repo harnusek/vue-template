@@ -4,10 +4,10 @@
       <v-col>
         <v-card>
           <v-card-title primary-title>
-            This is not the page you are looking for!
+            This is admin panel!
           </v-card-title>
           <v-card-text>
-            404 - page not found
+            TODO
           </v-card-text>
         </v-card>
       </v-col>
@@ -17,6 +17,6 @@
 
 <script>
 export default {
-  name: "404"
+  name: "Admin"
 };
 </script>

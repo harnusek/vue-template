@@ -1,4 +1,5 @@
 <template>
+  <div>
      <v-footer
       dark
       padless
@@ -32,6 +33,7 @@
       </v-card-text>
     </v-card>
   </v-footer>
+  </div>
 </template>
 
 <script>
